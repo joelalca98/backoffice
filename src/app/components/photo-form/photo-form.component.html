@@ -1,0 +1,38 @@
+<div class="col-lg-4 mx-auto">
+    <div class = "card">
+        <div class="card-header">
+            Añadir vacuna
+        </div>
+        <div class="card-body">
+            <form (submit)="uploadPhoto(title, description, tecnologia, fecha, vacuna)">
+                <div class="form-group">
+                    <input type="text" class = "form-control" placeholder="Nombre" required #title>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class = "form-control" placeholder="Descripcion" required #description></textarea>
+                </div>
+
+                <div class="form-group">
+                    <textarea rows="2" class = "form-control" placeholder="Tecnologia" required #tecnologia></textarea>
+                </div>
+
+                <div class="form-group">
+                    <textarea rows="2" class = "form-control" placeholder="Fecha" required #fecha></textarea>
+                </div>
+
+                <div class="form-group">
+                    <textarea rows="2" class = "form-control" placeholder="Vacuna" required #vacuna></textarea>
+                </div>
+
+                <input type = "file" class = "d-none" (change)="onPhotoSelected($event)" #photoInput>
+                <img [src]="photoSelected || 'assets/vacuna.jpg' " class="img-fluid" alt="User"
+                (click) = "photoInput.click()"> 
+
+                <button class = "btn btn-primary btn-block">
+                    Subir
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
